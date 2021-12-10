@@ -51,6 +51,7 @@ library
   -- Modules exported by the library.
   exposed-modules:     Level01.IntroExercises
                      , Level02.TypesExercises
+                     , Level03.ListExercises
 
   -- Modules included in this library but not exported.
   -- other-modules:
@@ -98,5 +99,6 @@ test-suite intro-to-haskell-tests
                      , intro-to-haskell
   other-modules:       Level01.IntroExercisesSpec
                      , Level02.TypesExercisesSpec
+                     , Level03.ListExercisesSpec
   default-language:    Haskell2010
   build-tool-depends:  hspec-discover:hspec-discover == 2.*
