@@ -55,6 +55,7 @@ library
                      , Level04
                      , Level04.MaybeExercises1
                      , Level04.MaybeExercises2
+                     , Level04.MaybeExercises3
 
   -- Modules included in this library but not exported.
   -- other-modules:
@@ -105,5 +106,6 @@ test-suite intro-to-haskell-tests
                      , Level03.ListExercisesSpec
                      , Level04.MaybeExercises1Spec
                      , Level04.MaybeExercises2Spec
+                     , Level04.MaybeExercises3Spec
   default-language:    Haskell2010
   build-tool-depends:  hspec-discover:hspec-discover == 2.*
