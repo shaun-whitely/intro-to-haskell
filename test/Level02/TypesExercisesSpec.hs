@@ -1,7 +1,7 @@
 module Level02.TypesExercisesSpec where
 
-import Test.Hspec
 import Level02.TypesExercises
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -22,7 +22,6 @@ spec = do
 
       updatedPerson `shouldBe` Person "Bob" 60
       person `shouldBe` Person "Bob" 50 -- assertion is unnecessary, but shows immutability
-
   describe "showWallet" $ do
     it "shows the wallet amount as a String" $ do
       let wallet = Wallet 23.4
@@ -35,7 +34,6 @@ spec = do
 
       updatedWallet `shouldBe` Wallet 75
       wallet `shouldBe` Wallet 100 -- assertion is unnecessary, but shows immutability
-
   describe "showTrafficLightStr" $ do
     it "shows red" $ do
       showTrafficLightStr "red" `shouldBe` "The traffic light is red"

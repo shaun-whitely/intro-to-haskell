@@ -1,8 +1,8 @@
 module Level04.MaybeExercises3Spec where
 
+import Level04.MaybeExercises2 (Job (Job))
 import Level04.MaybeExercises3
 import Test.Hspec
-import Level04.MaybeExercises2 (Job(Job))
 
 spec :: Spec
 spec = do

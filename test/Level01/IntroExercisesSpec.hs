@@ -1,7 +1,7 @@
 module Level01.IntroExercisesSpec where
 
-import Test.Hspec
 import Level01.IntroExercises
+import Test.Hspec
 
 spec :: Spec
 spec = do

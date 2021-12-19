@@ -1,7 +1,7 @@
 -- |
--- The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf
+-- The exercises here are adapted from: http://www.cis.upenn.edu/~cis194/spring13/hw/02-ADTs.pdf.
 --
--- Let's finish off this course by building a CLI program!
+-- Let\'s finish off this course by building a CLI program!
 -- We will build a program to parse a log file (containing Info, Warn and Error messages) and print
 -- out errors over a severity level.
 --
@@ -15,7 +15,7 @@ import Text.Read (readMaybe)
 -- |
 -- Here is how a log file may look.
 --
--- The @\@ at the start and end of each line can be ignored. This is how Haskell represents a
+-- The @\\@ at the start and end of each line can be ignored. This is how Haskell represents a
 -- multi-line string.
 logFile :: String
 logFile =
@@ -24,10 +24,10 @@ logFile =
   \E,5,158,some strange error\n\
   \E,2,148,istereadea\n"
 
--- Let's define an ADT to represent all possible log messages.
+-- Let\'s define an ADT to represent all possible log messages.
 
 -- |
--- Let's start with all the possible log levels:
+-- Let\'s start with all the possible log levels:
 --
 -- - Info
 -- - Warning
@@ -41,7 +41,7 @@ data LogLevel
 type Timestamp = Int
 
 -- |
--- Here is an ADT for @LogMessage@, which can be one of two possibilities:
+-- Here is an ADT for 'LogMessage', which can be one of two possibilities:
 --
 -- - KnownLog for messages in a recognised format
 -- - UnknownLog for all other messages
@@ -76,7 +76,7 @@ parseLog str =
 -- >>> parseLogFile "I,147,mice in the air\nX blblbaaaaa"
 -- [KnownLog Info 147 "mice in the air",UnknownLog "X blblbaaaaa"]
 --
--- Hint: Use @parseLog@ and @lines@
+-- Hint: Use 'parseLog' and 'lines'
 --
 -- What if we get an empty line from the file content.
 parseLogFile :: String -> [LogMessage]
@@ -92,7 +92,7 @@ parseLogFile fileContent = undefined
 -- >>> getErrorsOverSeverity [KnownLog (Error 2) 123 "some error msg"] 2
 -- []
 --
--- Hint: Use @mapMaybe@.
+-- Hint: Use 'mapMaybe'.
 getErrorsOverSeverity :: [LogMessage] -> Int -> [LogMessage]
 getErrorsOverSeverity logs severity =
   let errorOverSeverity message@(KnownLog (Error sev) _ _) = undefined
@@ -100,7 +100,7 @@ getErrorsOverSeverity logs severity =
    in undefined
 
 -- |
--- This function converts a @LogMessage@ to a readable @String@.
+-- This function converts a 'LogMessage' to a readable 'String'.
 showLogMessage :: LogMessage -> String
 showLogMessage (KnownLog Info timestamp message) =
   "Info (" <> show timestamp <> ") " <> message
@@ -112,12 +112,12 @@ showLogMessage (UnknownLog message) =
   "Unknown log: " <> message
 
 -- |
--- Use @showLogMessage@ on error logs with severity greater than the given @severity@.
+-- Use 'showLogMessage' on error logs with severity greater than the given @severity@.
 --
 -- >>> showErrorsOverSeverity logFile 2
 -- ["Error 5 (158) some strange error"]
 --
--- Hint: Use @parseLogFile@, @getErrorsOverSeverity@ and @showLogMessage@.
+-- Hint: Use 'parseLogFile', 'getErrorsOverSeverity' and 'showLogMessage'.
 showErrorsOverSeverity :: String -> Int -> [String]
 showErrorsOverSeverity fileContent severity = undefined
 

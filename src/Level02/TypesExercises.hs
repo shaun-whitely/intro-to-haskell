@@ -9,11 +9,11 @@ module Level02.TypesExercises where
 -- |
 -- A simple data type
 --
--- Here is an example of a `Person` type, which is a wrapper on `String` and `Int`.
+-- Here is an example of a 'Person' type, which is a wrapper on 'String' and 'Int'.
 --
--- This is a "product type", i.e. a `Person` is a "product" of `String` and `Int`.
+-- This is a \"product type\", i.e. a 'Person' is a \"product\" of 'String' and 'Int'.
 --
--- We're using record syntax to also create accessor functions for the person's parameters. We
+-- We\'re using record syntax to also create accessor functions for the person\'s parameters. We
 -- could have also written the definition like so:
 --
 -- >>> data Person = Person String Int deriving (Eq, Show)
@@ -30,7 +30,7 @@ person2 :: Person
 person2 = Person {personName = "John Kane", personAge = 35}
 
 -- |
--- All data types in Haskell are immutable. However, you can "update" an instance of a data type.
+-- All data types in Haskell are immutable. However, you can \"update\" an instance of a data type.
 -- Doing so will not modify the existing instance, but will return a new instance with the modified
 -- value.
 person3 :: Person
@@ -45,20 +45,20 @@ person3 = person2 {personAge = 40}
 --
 -- You can read the following code as:
 --
--- "If @person@ matches the @Person@ constructor, return the expression to the right hand side of
--- the @=@
+-- \"If @person@ matches the 'Person' constructor, return the expression to the right hand side of
+-- the @=@\"
 --
 -- The expression on the right hand side has access to the @name@ and @age@
--- "extracted" out of @person@.
+-- \"extracted\" out of the 'Person'.
 --
--- Hint: Use @show@ to convert an Int to a String.
+-- Hint: Use 'show' to convert an Int to a String.
 showPerson1 :: Person -> String
 showPerson1 (Person name age) = undefined <> " is " <> undefined <> " years old"
 
 -- |
--- Same as showPerson1, but using accessors instead.
+-- Same as 'showPerson1', but using accessors instead.
 --
--- Hint: Use @show@ to convert an Int to a String.
+-- Hint: Use 'show' to convert an Int to a String.
 showPerson2 :: Person -> String
 showPerson2 person = undefined <> " is " <> undefined <> " years old"
 
@@ -69,7 +69,7 @@ showPerson2 person = undefined <> " is " <> undefined <> " years old"
 -- >>> changeAge 51 person
 -- Person {personName = "Bob", personAge = 51}
 --
--- @person@ is immutable! This function returns a new instance of @Person@ with the @age@ changed.
+-- @person@ is immutable! This function returns a new instance of 'Person' with the @age@ changed.
 -- Check out the corresponding test in @TypesExercisesSpec@ to understand why.
 changeAge :: Int -> Person -> Person
 changeAge = undefined
@@ -77,9 +77,9 @@ changeAge = undefined
 -- * Section 2 - Wallet
 
 -- |
--- Let's look at another data type.
+-- Let\'s look at another data type.
 --
--- @Wallet@ is a tiny type on `Double` to represent the amount of money someone has.
+-- 'Wallet' is a tiny type on 'Double' to represent the amount of money someone has.
 --
 -- We could have also used the @data@ keyword, but @newtype@ creates a thin wrapper around a type
 -- that incurs no extra runtime cost.
@@ -90,7 +90,7 @@ newtype Wallet = Wallet Double deriving (Eq, Show)
 -- >>> showWallet wallet
 -- "The wallet amount is 20.5"
 --
--- You can solve this like how you solved @showPerson1@.
+-- You can solve this like how you solved 'showPerson1'.
 showWallet :: Wallet -> String
 showWallet = undefined
 
@@ -105,7 +105,7 @@ purchase = undefined
 
 -- * Section 3 - Test Driven Development
 
---
+-- $section3
 -- >>> showTrafficLightStr "red"
 -- "The traffic light is red"
 --
@@ -132,7 +132,7 @@ showTrafficLightStr = undefined
 
 -- ** Section 4.1 - Adding a new Traffic Light (using TDD)
 
---
+-- $section41
 -- We need to have a new traffic light called Flashing:
 --
 -- 1. Implement the test for this scenario: "should show flashing"
@@ -148,9 +148,9 @@ showTrafficLightStr = undefined
 -- |
 -- A "sum type" represents more than one possible value.
 --
--- You can read the following as a `TrafficLight` is either `Red` or `Yellow` or `Green`.
+-- You can read the following as a 'TrafficLight' is either 'Red' or 'Yellow' or 'Green'.
 --
--- This technique helps you make invalid states/values irrepresentable in your programs
+-- This technique helps you make invalid states/values irrepresentable in your programs.
 data TrafficLight = Red | Yellow | Green deriving (Eq, Show)
 
 -- |
@@ -171,10 +171,10 @@ showTrafficLight = undefined
 
 -- ** Section 5.1 - Add a new Traffic Light
 
+-- $section51
+-- Now introduce a new type of 'TrafficLight' called 'Flashing'.
 --
--- Now introduce a new type of @TrafficLight@ called @Flashing@.
---
--- 1. Add a new value Flashing to the @TrafficLight@ Type
+-- 1. Add a new value Flashing to the 'TrafficLight' Type
 -- 2. Try compile. What happens? How is this different than the previous String implementation?
--- 3. Extend @showTrafficLight@ to fix the compilation error.
--- 4. Fill in the unit test for this new scenario: "showTrafficLight should show Flashing"
+-- 3. Extend 'showTrafficLight' to fix the compilation error.
+-- 4. Fill in the unit test for this new scenario: \"showTrafficLight should show Flashing\"

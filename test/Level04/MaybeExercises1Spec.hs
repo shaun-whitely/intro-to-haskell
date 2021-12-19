@@ -11,7 +11,7 @@ spec = do
       safeMean [] `shouldBe` Nothing
 
     it "returns the mean of a non-empty list of numbers" $ do
-      safeMean [1,2,3,4] `shouldBe` Just 2.5
+      safeMean [1, 2, 3, 4] `shouldBe` Just 2.5
 
   describe "mkTrafficLight" $ do
     it "returns Nothing given an unknown String" $ do

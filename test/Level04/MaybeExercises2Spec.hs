@@ -1,4 +1,5 @@
 module Level04.MaybeExercises2Spec where
+
 import Level04.MaybeExercises2
 import Test.Hspec
 
@@ -35,7 +36,6 @@ spec = do
     it "returns the description of the job for the jobId" $ do
       findJobDescriptionGivenJobId2 1 `shouldBe` Just "Expert in their field"
       findJobDescriptionGivenJobId2 2 `shouldBe` Just "Build things for people"
-
 
   describe "findJobDescriptionGivenJobIdOrElse1" $ do
     it "returns 'does not exist' message if jobId is not in jobsDatabase" $ do

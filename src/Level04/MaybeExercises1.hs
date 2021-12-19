@@ -1,10 +1,10 @@
 -- |
--- Here we introduce a new ADT - @Maybe@ for dealing with values that may not exist.
+-- Here we introduce a new ADT - 'Maybe' for dealing with values that may not exist.
 --
 -- We will also cover safe constructors, which in conjunction with ADTs, allow us to prevent invalid
 -- states from being represented.
 --
--- @Maybe@ data type:
+-- 'Maybe' data type:
 --
 -- @
 -- data Maybe a = Nothing | Just a
@@ -20,10 +20,10 @@ import Level04
 -- >>> safeMean []
 -- Nothing
 --
--- Hint: Use @sum@, @length@ and convert the numerator or denominator to a @Double@ using
--- @fromIntegral@.
+-- Hint: Use 'sum', 'length' and convert the numerator or denominator to a 'Double' using
+-- 'fromIntegral'.
 --
--- The division operator, @/@ isn't defined for @Int@.
+-- The division operator, '/' isn't defined for @Int@.
 --
 -- >>> (1 :: Int) / 2
 -- No instance for (Fractional Int) arising from a use of ‘/’
@@ -35,7 +35,7 @@ safeMean = undefined
 
 -- * Safe Constructors
 
---
+-- $safeconstructors
 -- Allows us to convert input from the real world (e.g. files, HTTP request, etc.) into ADTs.
 
 -- |
@@ -69,7 +69,7 @@ mkTrafficLight = undefined
 -- >>> mkPerson "Bob" (-1)
 -- Nothing
 --
--- Hint: Don't forget every @if@ needs an @else@!
+-- Hint: Don\'t forget every @if@ needs an @else@!
 mkPerson :: String -> Int -> Maybe Person
 mkPerson = undefined
 
@@ -83,7 +83,7 @@ mkPerson = undefined
 -- >>> mkPersonThenReverseName "" 20
 -- Nothing
 --
--- Hint: Use @mkPerson@, @reverseName@ and pattern matching.
+-- Hint: Use 'mkPerson', 'reverseName' and pattern matching.
 mkPersonThenReverseName :: String -> Int -> Maybe Person
 mkPersonThenReverseName = undefined
 

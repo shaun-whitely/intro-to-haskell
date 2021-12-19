@@ -1,21 +1,22 @@
 -- |
 -- These exercises will teach you how to work with lists in Haskell.
 --
--- At the end of these exercises, you should have a good intuition on when to use @fmap@, @filter@
--- or @foldr@.
+-- At the end of these exercises, you should have a good intuition on when to use 'fmap', 'filter'
+-- or 'foldr'.
 module Level03.ListExercises where
 
+-- $listexercises
 -- A list in Haskell is a linked list. It has two constructors:
 --
 -- - @[]@: the empty list
 -- - @(:)@: the "cons" operator
 --
--- Using the "cons" operator and the empty list:
+-- Using the \"cons\" operator and the empty list:
 --
 -- >>> 1:2:3:[]
 -- [1,2,3]
 --
--- Using the "cons" operator in the prefix position (not recommended):
+-- Using the \"cons\" operator in the prefix position (not recommended):
 --
 -- >>> (:) 1 ((:) 2 ((:) 3 []))
 -- [1,2,3]
@@ -37,7 +38,7 @@ prependToList = undefined
 -- >>> appendToList 1 [2,3,4]
 -- [2,3,4,1]
 --
--- - Hint 1: You can concatenate two lists with @<>@.
+-- - Hint 1: You can concatenate two lists with '<>'.
 -- - Hint 2: You can construct a singleton list like so: @[a]@.
 --
 -- Appending to a list (especially a large one) is discouraged. Why might that be?
@@ -45,9 +46,9 @@ appendToList :: a -> [a] -> [a]
 appendToList = undefined
 
 -- |
--- Haskell's built-in @null@ function returns whether a list is empty or not.
+-- Haskell\'s built-in 'null' function returns whether a list is empty or not.
 --
--- For this exercise, let's build a version of @null@ called @isEmptyList@ without using @null@
+-- For this exercise, let\'s build a version of 'null' called 'isEmptyList' without using 'null'
 -- (that would be cheating!).
 --
 -- >>> isEmptyList []
@@ -56,8 +57,8 @@ appendToList = undefined
 -- >>> isEmptyList [1,2,3]
 -- False
 --
--- Hint: Use pattern matching. You can pattern match on a list using its two constructors: @[]@ and
--- @(:)@.
+-- Hint: Use pattern matching. You can pattern match on a list using its two constructors: '[]' and
+-- '(:)'.
 isEmptyList :: [a] -> Bool
 isEmptyList = undefined
 
@@ -71,7 +72,7 @@ isEmptyList = undefined
 -- >>> showListSize []
 -- "This is an empty list"
 --
--- Hint: Use pattern matching, @<>@ to concatenate strings, and the @length@ function.
+-- Hint: Use pattern matching, '<>' to concatenate strings, and the 'length' function.
 showListSize :: [a] -> String
 showListSize = undefined
 
@@ -91,12 +92,12 @@ showListSize = undefined
 --
 -- >>> (+1)
 --
--- Hint: Use @fmap@
+-- Hint: Use 'fmap'
 addNumToEach1 :: Int -> [Int] -> [Int]
 addNumToEach1 = undefined
 
 -- |
--- Same as @addNumToEach1@, but using the infix @<$>@ operator.
+-- Same as 'addNumToEach1', but using the infix '<$>' operator.
 addNumToEach2 :: Int -> [Int] -> [Int]
 addNumToEach2 = undefined
 
@@ -108,7 +109,7 @@ addNumToEach2 = undefined
 -- >>> filterEven [1,2,3,4]
 -- [2,4]
 --
--- Hint: Use @filter@ and @even@.
+-- Hint: Use 'filter' and 'even'.
 filterEven :: [Int] -> [Int]
 filterEven = undefined
 
@@ -121,7 +122,7 @@ filterEven = undefined
 --
 -- Examples: sum, product, min, max
 --
--- Hint: Use the @foldr@ function.
+-- Hint: Use the 'foldr' function.
 
 -- |
 -- >>> productOfNums [2,5,3]
@@ -132,10 +133,10 @@ filterEven = undefined
 -- >>> productOfNums []
 -- 1
 --
--- Haskell already has a built-in @product@ function. Don't use it for this exercise (that would
+-- Haskell already has a built-in 'product' function. Don\'t use it for this exercise (that would
 -- be cheating!).
 --
--- Hint: Use @foldr@
+-- Hint: Use 'foldr'
 productOfNums :: [Int] -> Int
 productOfNums = undefined
 
@@ -185,7 +186,7 @@ youngestPerson = undefined
 -- >>> take 20 [1..]
 -- [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 --
--- You can combine corresponding elements of two lists into tuples using @zip@. The lists will be
+-- You can combine corresponding elements of two lists into tuples using 'zip'. The lists will be
 -- zipped together until either one reaches the end. The length of the resulting list is the length
 -- of the shorter of the two lists
 --
@@ -206,7 +207,7 @@ personWithIndex = undefined
 -- >>> showEveryNthPerson (-1) [Person "Foo" 1, Person "Bar" 2]
 -- ["Foo is 1 years old","Bar is 2 years old"]
 --
--- Hint: Use @personWithIndex@, @filter@ and @showPerson@.
+-- Hint: Use 'personWithIndex', 'filter' and 'showPerson'.
 showEveryNthPerson :: Int -> [Person] -> [String]
 showEveryNthPerson n people = undefined
 
@@ -224,7 +225,7 @@ showPerson (Person name age) = name <> " is " <> show age <> " years old"
 -- Then implement the following function using a pointfree style. You've implemented it before.
 -- This time do it without declaring any arguments.
 --
--- Hint: Use Haskell's built-in @even@ function.
+-- Hint: Use Haskell\'s built-in 'even' function.
 --
 -- Try on your own first. But if you get stuck, try out http://pointfree.io/.
 filterEven1 :: [Int] -> [Int]
@@ -233,7 +234,7 @@ filterEven1 = undefined
 -- |
 -- Just as before, implement this function using a pointfree style.
 --
--- Don't use the built-in @product@ function. That would be cheating!
+-- Don't use the built-in 'product' function. That would be cheating!
 productOfNums1 :: [Int] -> Int
 productOfNums1 = undefined
 
@@ -279,10 +280,10 @@ getAdults = undefined
 --
 -- Try implementing the following function that will reverse a list using @foldl@.
 --
--- Once you get it working, try using @foldr@ instead. You will need to change the arguments around.
+-- Once you get it working, try using 'foldr' instead. You will need to change the arguments around.
 -- What result do you get?
 --
--- Don't use the built-in @reverse@ function. That would be cheating!
+-- Don't use the built-in 'reverse' function. That would be cheating!
 --
 -- >>> reverseList [1,2,3,4,5]
 -- [5,4,3,2,1]
@@ -297,7 +298,7 @@ reverseList = undefined
 -- [["a","a","a","a"],["b"],["c","c"],["a","a"],["d"],["e","e","e","e"]]
 --
 -- Note: This function has a type signature we haven't seen before. It uses a type constraint.
--- You can read this as "Given a type @a@ that can be compared for equality, this is a function from
--- @[a]@ to @[[a]]@".
+-- You can read this as \"Given a type @a@ that can be compared for equality, this is a function from
+-- @[a]@ to @[[a]]@\".
 sublists :: Eq a => [a] -> [[a]]
 sublists = undefined
